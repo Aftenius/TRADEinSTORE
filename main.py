@@ -36,6 +36,7 @@ def main():
         for line in differences:
             print(line)
 
+        print()
         print("================================\n================================")
 
 
