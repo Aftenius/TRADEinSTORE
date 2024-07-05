@@ -1,6 +1,3 @@
-FILE_OLD = 'OLD_list/post_tg_1.txt'
-FILE_NEW = 'NEW_list/post_tg_1.txt'
-
 def read_file(file_path):
     """Чтение содержимого файла и возврат списка строк."""
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -29,11 +26,17 @@ def copy_and_clear_file(new_file, old_file):
 
 
 def main():
-    differences = compare_files(FILE_OLD, FILE_NEW)
-    copy_and_clear_file(FILE_NEW, FILE_OLD)
+    for numb in range(5):
+        FILE_OLD = f'OLD_list/post_tg_{numb+1}.txt'
+        FILE_NEW = f'NEW_list/post_tg_{numb+1}.txt'
 
-    for line in differences:
-        print(line)
+        differences = compare_files(FILE_OLD, FILE_NEW)
+        copy_and_clear_file(FILE_NEW, FILE_OLD)
+
+        for line in differences:
+            print(line)
+
+        print("================================\n================================")
 
 
 if __name__ == "__main__":
